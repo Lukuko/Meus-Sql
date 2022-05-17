@@ -1,0 +1,22 @@
+CREATE DB Empresa;
+
+CREATE TABLE "empregado" (
+	"matricula"	INTEGER(11) NOT NULL,
+	"nome"	VARCHAR(45) NOT NULL,
+	"codprojeto"	INTEGER(11) NOT NULL,
+	"coddepartamento"	INTEGER(11) NOT NULL,
+	FOREIGN KEY("codprojeto") REFERENCES projeto ,
+	FOREIGN KEY("coddepartamento") REFERENCES departamento ,
+	PRIMARY KEY("matricula")
+);
+CREATE TABLE "departamento" (
+	"coddepartamento"	INTEGER(11),
+	"nome"	VARCHAR(45),
+	PRIMARY KEY("coddepartamento")
+);
+CREATE TABLE "projeto" (
+	"codprojeto"	INTEGER NOT NULL,
+	"nome"	VARCHAR(45),
+	"nomegerente"	VARCHAR(45),
+	PRIMARY KEY("cod")
+);
